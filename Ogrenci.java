@@ -1,4 +1,4 @@
-package OgrenciIsleriOtomasyonu;
+	package OgrenciIsleriOtomasyonu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +8,6 @@ class Ogrenci extends Kullanici implements OgrenciIslemleri, VeriIslemleri {
     public ArrayList<String> dersler;
     public Map<String, Integer> notlar;
     public OgretimUyesi danismanHoca;
-
     public Ogrenci(String id, String isim, String sifre, OgretimUyesi danisman) {
         super(id, isim, sifre);
         danismanHoca = danisman;
@@ -21,7 +20,7 @@ class Ogrenci extends Kullanici implements OgrenciIslemleri, VeriIslemleri {
 
     @Override
     public void dersSec(String dersAdi) {
-        danismanHoca.bekleyenDersler.put(dersAdi, this);
+        danismanHoca.bekleyenDersler.put(id + " | " + dersAdi, this); // ÇAKIŞMAYI ÖNLEMEK İÇİN İD İLE EKLE, DAHA SONRA STRİNG DELİMETER İLE İD SİL
     }
 
 
